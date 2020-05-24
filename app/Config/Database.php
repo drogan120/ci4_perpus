@@ -36,7 +36,7 @@ class Database extends \CodeIgniter\Database\Config
         'hostname' => 'localhost',
         'username' => 'root',
         'password' => '',
-        'database' => 'ci_perpus',
+        'database' => 'ci4_perpus',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
