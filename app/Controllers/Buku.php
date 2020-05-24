@@ -42,16 +42,15 @@ class Buku extends Controller
     {
         $post =  $this->request->getGetPost(null);
         if ($post) {
-
             $buku = new Model_buku();
 
             $data =
-                [
-                    'judul_buku'         => $post['judul'],
-                    'pengarang_buku'     => $post['pengarang'],
-                    'isbn_buku'         => $post['isbn'],
-                    'penerbit_buku'     => $post['penerbit'],
-                ];
+            [
+                'judul_buku'         => $post['judul'],
+                'pengarang_buku'     => $post['pengarang'],
+                'isbn_buku'         => $post['isbn'],
+                'penerbit_buku'     => $post['penerbit'],
+            ];
             $tambah = $buku->tambah_buku($data);
             if ($tambah) {
                 return redirect()->to('/buku');
@@ -64,20 +63,28 @@ class Buku extends Controller
         helper('url');
         $post =  $this->request->getGetPost(null);
         if ($post) {
-
             $buku = new Model_buku();
             $id = $post['id_buku'];
             $data =
-                [
-                    'judul_buku'         => $post['judul'],
-                    'pengarang_buku'     => $post['pengarang'],
-                    'isbn_buku'         => $post['isbn'],
-                    'penerbit_buku'     => $post['penerbit'],
-                ];
+            [
+                'judul_buku'         => $post['judul'],
+                'pengarang_buku'     => $post['pengarang'],
+                'isbn_buku'         => $post['isbn'],
+                'penerbit_buku'     => $post['penerbit'],
+            ];
             $simpan = $buku->ubah_buku($data, $id);
             if ($simpan) {
                 return redirect()->to('/buku');
             }
         }
+    }
+
+    function cari($keyword = null)
+    {
+        $buku =  new Model_buku();
+        $data['buku'] = $buku->search($keyword);
+     
+        echo View('user/search_buku', $data);
+        
     }
 }

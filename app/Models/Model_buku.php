@@ -4,8 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-
-class Model_buku extends  Model
+class Model_buku extends Model
 {
 
     public function __construct()
@@ -51,6 +50,16 @@ class Model_buku extends  Model
     {
         $builder =  $this->db->table('buku');
         $builder->where('isbn_buku', $isbn);
+        return $builder->get()->getResult();
+    }
+
+    function search($keyword)
+    {
+        $builder = $this->db->table('buku');
+        $builder->like('judul_buku', $keyword);
+        // $builder->like('isbn_buku', $keyword);
+        // $builder->like('pengarang_buku', $keyword);
+        // $builder->like('penerbit_buku', $keyword);
         return $builder->get()->getResult();
     }
 }
