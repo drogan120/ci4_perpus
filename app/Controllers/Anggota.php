@@ -7,6 +7,13 @@ use App\Models\Model_anggota;
 
 class Anggota extends Controller
 {
+    public function __construct()
+    {
+        
+        helper('fungsi');
+        check_login();
+    }
+    
 
     function index()
     {

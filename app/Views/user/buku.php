@@ -1,10 +1,10 @@
 
 <div class="container">
-<form action="" method="post">
-    <div class="form-group mt-5">
-        <input type="text" class="form-control" placeholder="Search here .." id="keyword">
-    </div>
-</form>
+    <form action="" method="post">
+        <div class="form-group mt-5">
+            <input type="text" class="form-control" placeholder="Search title here .." id="keyword">
+        </div>
+    </form>
     <div class="row" id="buku">
         <?php foreach ($buku as $bku) : ?>
             <div class="col-md-3">

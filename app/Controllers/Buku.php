@@ -8,6 +8,13 @@ use App\Models\Model_buku;
 class Buku extends Controller
 {
 
+    public function __construct()
+    {
+        
+        helper('fungsi');
+        check_login();
+    }
+    
 
     public function index()
     {
@@ -83,8 +90,7 @@ class Buku extends Controller
     {
         $buku =  new Model_buku();
         $data['buku'] = $buku->search($keyword);
-     
-        echo View('user/search_buku', $data);
         
+        echo View('user/search_buku', $data);
     }
 }

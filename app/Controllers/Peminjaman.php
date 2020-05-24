@@ -10,6 +10,14 @@ use CodeIgniter\Config\View;
 
 class Peminjaman extends Controller
 {
+
+    public function __construct()
+    {
+        
+        helper('fungsi');
+        check_login();
+    }
+    
     public function index()
     {
         $peminjaman = new Model_peminjaman();

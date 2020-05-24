@@ -6,6 +6,13 @@ use CodeIgniter\Controller;
 
 class Dashboard extends Controller
 {
+    public function __construct()
+    {
+        
+        helper('fungsi');
+        check_login();
+    }
+    
 
     function index()
     {
@@ -15,4 +22,3 @@ class Dashboard extends Controller
         echo View('admin/footer');
     }
 }
-?>
