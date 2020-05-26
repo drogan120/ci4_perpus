@@ -1,4 +1,6 @@
-<?php namespace App\Controllers;
+<?php
+
+namespace App\Controllers;
 
 use CodeIgniter\Controller;
 
@@ -9,11 +11,11 @@ class Auth extends Controller
 
     public function __construct()
     {
-        
+
         helper('fungsi');
         is_login();
     }
-    
+
     public function index()
     {
         echo View('user/header');
@@ -36,13 +38,6 @@ class Auth extends Controller
             $user->login($data);
             return redirect()->to('/dashboard');
         }
-    }
-
-    public function register()
-    {
-        echo View('user/header');
-        echo View('auth/login');
-        echo View('user/footer');
     }
 
     public function logout()

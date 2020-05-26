@@ -26,8 +26,7 @@
           <div class="container">
             <?php
 
-            
-            check_login();
+            session_get();
             
             ?>
           </div>

@@ -1,4 +1,6 @@
-<?php namespace App\Models;
+<?php
+
+namespace App\Models;
 
 use CodeIgniter\Model;
 
@@ -22,7 +24,7 @@ class Model_auth extends Model
                     'id' => $row[0]['id_admin'],
                     'username' => $row[0]['email_admin'],
                 ];
-                
+
                 $session->set($user);
                 echo "<pre>";
                 print_r($session->get());

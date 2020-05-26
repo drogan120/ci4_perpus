@@ -8,7 +8,7 @@ class Dashboard extends Controller
 {
     public function __construct()
     {
-        
+
         helper('fungsi');
         check_login();
     }
