@@ -1,0 +1,4 @@
+adding crud ajax
+adding form validation
+adding flashdata/sweet alert
+adding image handler

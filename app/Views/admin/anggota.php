@@ -39,19 +39,17 @@
                 </tr>
               </thead>
               <tbody>
-                <button type="button" class="btn btn-info mt-2 mb-2" data-toggle="modal" data-target="#anggotaModal">
-                  Tambah <i class="fas fa-plus"></i>
-                </button>
-                <?php $no =1 ?>
-                <?php foreach ($anggota as $member): ?>
+                <a href="<?= base_url('anggota/tambah_anggota') ?>" class="btn btn-info mt-2 mb-2">Tambah</a>
+                <?php $no = 1 ?>
+                <?php foreach ($anggota as $member) : ?>
                   <tr>
                     <td><?= $no++ ?></td>
                     <td><?= $member->nama_anggota ?></td>
                     <td><?= $member->telepon_anggota ?></td>
                     <td><?= $member->kelas_anggota ?></td>
                     <td><?= $member->jurusan_anggota ?></td>
-                    <td><a href="" class="btn btn-danger">Hapus</a></td>
-                    <td><a href="" class="btn btn-info">Ubah</a></td>
+                    <td><a href="<?= base_url('anggota/hapus_anggota/' . $member->id_anggota) ?>" class="btn btn-danger" onclick="return confirm('yakin hapus ?')">Hapus</a></td>
+                    <td><a href="<?= base_url('anggota/ubah_anggota/' . $member->id_anggota) ?>" class="btn btn-info">Ubah</a></td>
                   </tr>
                 <?php endforeach ?>
               </tbody>
@@ -61,25 +59,4 @@
         </div>
       </div>
     </section>
-  </div>
-  <!-- /.content-wrapper -->
-  <!-- Modal -->
-  <div class="modal fade" id="anggotaModal" tabindex="-1" role="dialog" aria-labelledby="anggotaModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="anggotaModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
   </div>

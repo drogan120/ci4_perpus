@@ -59,11 +59,11 @@
                 </div>
                 <div class="col-md-4">
                   <div class="thumbnail">
-                    <img src="" alt="" class="img-fluid">
+                    <img src="<?= base_url('assets/img/foto_anggota/' . $adm->foto_admin) ?>" class="img-fluid">
                   </div>
                 </div>
-              <?php endforeach; ?>
               </div>
+            <?php endforeach; ?>
           </div>
         </div>
       </div>
