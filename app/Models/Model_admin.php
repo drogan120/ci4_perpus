@@ -12,11 +12,29 @@ class Model_admin extends Model
         return $this->db->table('admin')->get()->getResult();
     }
 
-    function new_admin($post)
+    function new_admin($data)
+    {
+        $builder = $this->db->table('admin');
+        $builder->insert($data);
+        return redirect()->to('/admin');
+    }
+
+    function getAdminById($id)
+    {
+        return $this->db->table('admin')->where('id_admin', $id)->get()->getResult();
+    }
+
+    function admin_update($id, $data)
     {
 
-        echo "<pre>";
-        print_r($post);
-        echo "</pre>";
+        $builder = $this->db->table('admin');
+        $builder->where('id_admin', $id);
+        $builder->update($data);
+        return redirect()->to('/admin');
+    }
+
+    public function delete_admin($id)
+    {
+        return $this->db->table('admin')->where('id_admin', $id)->delete();
     }
 }

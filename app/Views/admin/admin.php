@@ -47,8 +47,8 @@
                     <td><?= $adm->email_admin ?></td>
                     <td><?= $adm->telepon_admin ?></td>
                     <td><?= $adm->foto_admin ?></td>
-                    <td><a href="" class="btn btn-danger">Hapus</a></td>
-                    <td><a href="" class="btn btn-success">Ubah</a></td>
+                    <td><a href="<?= base_url('/admin/hapus_admin/' . $adm->id_admin) ?>" class="btn btn-danger" onclick="return confirm('hapus data ?')">Hapus</a></td>
+                    <td><a href="<?= base_url('/admin/edit_admin/' . $adm->id_admin) ?>" class="btn btn-success">Ubah</a></td>
                   </tr>
                 <?php endforeach; ?>
               </tbody>
