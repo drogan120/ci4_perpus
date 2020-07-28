@@ -24,6 +24,13 @@ class Model_anggota extends Model
         return $builder->get()->getResult();
     }
 
+    function getbyNIM($nim)
+    {
+        $builder =  $this->db->table('anggota');
+        $builder->where('nim_anggota', $nim);
+        return $builder->get()->getResult();
+    }
+
     function update_data($data, $id)
     {
         $builder = $this->db->table('anggota');
