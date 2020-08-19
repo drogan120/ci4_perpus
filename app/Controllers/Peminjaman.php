@@ -6,7 +6,6 @@ use CodeIgniter\Controller;
 use App\Models\Model_peminjaman;
 use App\Models\Model_anggota;
 use App\Models\Model_buku;
-use CodeIgniter\Config\View;
 
 class Peminjaman extends Controller
 {
